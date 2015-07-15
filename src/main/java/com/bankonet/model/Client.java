@@ -3,13 +3,13 @@ package com.bankonet.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-
 public class Client{
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int ID;
 
   
@@ -19,8 +19,24 @@ public class Client{
    */
   public Client() {
   }
+  
+  
 	
-  public void getId(Integer ID) {
+  public Client(int iD) {
+	super();
+	ID = iD;
+}
+
+
+
+public Client(String nom) {
+	super();
+	this.nom = nom;
+}
+
+
+
+public void getId(Integer ID) {
     this.ID=ID;
   }
 
